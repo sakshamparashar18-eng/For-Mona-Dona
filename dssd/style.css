@@ -1,0 +1,312 @@
+/* ===========================
+   Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+
+    background:linear-gradient(135deg,#0f172a,#1e1b4b,#831843);
+}
+
+/* ===========================
+   Animated Stars
+=========================== */
+
+.background{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+        radial-gradient(white 1px, transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.25;
+
+    animation:moveStars 40s linear infinite;
+
+}
+
+/* ===========================
+   Main Card
+=========================== */
+
+.card{
+
+    width:750px;
+    max-width:92%;
+
+    padding:55px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.10);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:0 0 40px rgba(255,0,120,.35);
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* ===========================
+   Headings
+=========================== */
+
+h1{
+
+    font-size:52px;
+
+    margin-bottom:25px;
+
+    color:#ffffff;
+
+}
+
+/* ===========================
+   Normal Paragraphs
+=========================== */
+
+p{
+
+    font-size:24px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button{
+
+    padding:18px 42px;
+
+    margin:10px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    color:white;
+
+    background:#ff4d8d;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:scale(1.08);
+
+    background:#ff2d73;
+
+    box-shadow:0 0 20px hotpink;
+
+}
+
+/* ===========================
+   Letter Page
+=========================== */
+
+#letter{
+
+    width:900px;
+
+    max-width:94%;
+
+    height:80vh;
+
+    overflow-y:auto;
+
+    text-align:left;
+
+}
+
+/* Scrollbar */
+
+#letter::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+#letter::-webkit-scrollbar-thumb{
+
+    background:#ff4d8d;
+
+    border-radius:20px;
+
+}
+
+/* Typewriter Text */
+
+#typewriter{
+
+    white-space:pre-line;
+
+    font-size:22px;
+
+    line-height:2;
+
+    color:white;
+
+    font-family:"Courier New", monospace;
+
+}
+
+/* Blinking Cursor */
+
+#typewriter::after{
+
+    content:"|";
+
+    color:#ff4d8d;
+
+    animation:blink .8s infinite;
+
+}
+
+/* ===========================
+   Hidden
+=========================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(50px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes moveStars{
+
+    from{
+
+        background-position:0 0;
+
+    }
+
+    to{
+
+        background-position:1000px 1000px;
+
+    }
+
+}
+
+@keyframes blink{
+
+    50%{
+
+        opacity:0;
+
+    }
+
+}
+
+/* ===========================
+   Mobile
+=========================== */
+
+@media(max-width:768px){
+
+    .card{
+
+        padding:30px;
+
+    }
+
+    h1{
+
+        font-size:34px;
+
+    }
+
+    p{
+
+        font-size:18px;
+
+    }
+
+    button{
+
+        width:100%;
+
+        font-size:18px;
+
+        padding:16px;
+
+    }
+
+    #letter{
+
+        height:75vh;
+
+    }
+
+    #typewriter{
+
+        font-size:18px;
+
+    }
+
+} 
